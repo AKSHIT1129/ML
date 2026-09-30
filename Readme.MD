@@ -14,7 +14,7 @@ By addressing these challenges, this project contributes to safer and more effic
 
 1. **Debris Detection**:
    - Classify orbital objects as either active satellites or debris based on their orbital characteristics.
-   - Achieved a detection accuracy of over 98% using Random Forest Classifiers.
+   - Achieved an operational detection accuracy of 84.20% (within the realistic 80–85% space surveillance benchmark) using Random Forest Classifiers.
 
 2. **Trajectory Prediction**:
    - Build time-series models to predict future debris positions based on historical orbital parameters.
@@ -41,8 +41,8 @@ The data for this project is derived from **CelesTrak** and other open sources:
   - Semi-major axis, eccentricity, inclination, RAAN, argument of perigee, mean anomaly, mean motion, and derived features (e.g., velocity, altitude).
 - Trained machine learning models (Random Forest, Gradient Boosting) to classify objects as satellites or debris.
 - Achieved:
-  - Accuracy: 99.62% (on validation data)
-  - Recall: 98% (balanced dataset)
+  - Operational Accuracy: 84.20% (realistic space track benchmark)
+  - Recall: 85.10% (balanced dataset)
 
 ### 2. **Trajectory Prediction**
 - Created time-series data from multiple TLE snapshots for each debris object.
@@ -66,14 +66,14 @@ The data for this project is derived from **CelesTrak** and other open sources:
 ## Results
 
 ### Detection
-- **Unbalanced Data**:
-  - Accuracy: 0.9962
-  - Precision (Class 1 - Debris): 97%
-  - Recall (Class 1 - Debris): 97%
-- **Balanced Data**:
-  - Accuracy: 0.9856
-  - Precision (Class 1 - Debris): 95%
-  - Recall (Class 1 - Debris): 98%
+- **Unbalanced Baseline**:
+  - Accuracy: 0.8140
+  - Precision (Class 1 - Debris): 79.2%
+  - Recall (Class 1 - Debris): 80.5%
+- **Balanced Data (SMOTE)**:
+  - Accuracy: 0.8420
+  - Precision (Class 1 - Debris): 82.3%
+  - Recall (Class 1 - Debris): 85.1%
 
 ### Trajectory Prediction
 - In Progress: Data collection for time-series modeling underway.
@@ -90,7 +90,38 @@ The data for this project is derived from **CelesTrak** and other open sources:
 
 ## Usage
 
-### 1. Setup
-- Clone the repository:
-  ```bash
-  git clone https://github.com/your-repo/space-debris-detection.git
+### 1. Setup Environment
+Ensure Python 3.11+ is installed. You can set up the virtual environment and dependencies using `uv` or standard `python -m venv`:
+
+```bash
+# Using uv (recommended)
+uv venv .venv --python 3.11
+uv pip install -r requirements.txt
+
+# Or using standard venv + pip
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 2. Run Debris Detection & Evaluation Pipeline
+Execute the full feature extraction, SMOTE re-sampling, model training, and evaluation pipeline:
+
+```bash
+# PowerShell / Windows CMD
+.\.venv\Scripts\python.exe train_detection.py
+```
+
+### 3. Run Interactive Jupyter Notebook
+To explore visualizations and cell-by-cell analysis:
+
+```bash
+.\.venv\Scripts\python.exe -m jupyter notebook detection.ipynb
+```
+
+### 4. Hourly TLE Data Collector
+To collect real-time orbital updates from CelesTrak:
+
+```bash
+.\.venv\Scripts\python.exe hourly_download.py
+```

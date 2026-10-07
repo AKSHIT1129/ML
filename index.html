@@ -7,15 +7,14 @@
   <style>
     :root {
       --bg: #000000;
-      --crystal-black: rgba(3, 4, 6, 0.96);
-      --crystal-surface: rgba(6, 8, 12, 0.94);
-      --crystal-surface-subtle: rgba(255, 255, 255, 0.035);
-      --crystal-border: rgba(255, 255, 255, 0.22);
-      --crystal-border-sharp: rgba(255, 255, 255, 0.45);
-      --crystal-edge-sheen: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      --glass-panel: rgba(4, 7, 14, 0.62);
+      --glass-surface: rgba(6, 10, 20, 0.58);
+      --glass-border: rgba(255, 255, 255, 0.16);
+      --glass-border-sharp: rgba(255, 255, 255, 0.30);
+      --glass-edge-sheen: inset 0 1px 1px rgba(255, 255, 255, 0.28), inset 0 -1px 0 rgba(0, 0, 0, 0.5);
       --text: #ffffff;
-      --text-muted: #b4bcc8;
-      --text-dim: #747c8a;
+      --text-muted: #c0c8d4;
+      --text-dim: #7e8796;
       --color-debris: #ff2b56;
       --color-satellite: #00e5ff;
       --font-serif: 'Times New Roman', Times, 'Liberation Serif', serif;
@@ -49,11 +48,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--crystal-border);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9), var(--crystal-edge-sheen);
+      background: rgba(4, 7, 14, 0.65);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), var(--glass-edge-sheen);
       z-index: 50;
     }
 
@@ -84,18 +83,18 @@
     }
 
     .nav-btn {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
       color: var(--text);
-      border: 1px solid var(--crystal-border);
+      border: 1px solid var(--glass-border);
       padding: 0.42rem 0.95rem;
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       border-radius: 0px;
       cursor: pointer;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
       transition: all 0.18s ease;
     }
 
@@ -118,11 +117,12 @@
       letter-spacing: 0.07em;
       text-transform: uppercase;
       padding: 0.38rem 0.85rem;
-      border: 1px solid var(--crystal-border);
+      border: 1px solid var(--glass-border);
       border-radius: 0px;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(12px);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.20);
       margin-right: 0.3rem;
     }
 
@@ -161,12 +161,12 @@
       align-items: center;
       gap: 0.35rem;
       padding: 0.40rem 0.65rem;
-      background: rgba(2, 2, 4, 0.96);
-      border: 1px solid var(--crystal-border-sharp);
+      background: rgba(4, 7, 14, 0.62);
+      border: 1px solid var(--glass-border-sharp);
       border-radius: 0px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.98), var(--crystal-edge-sheen);
+      backdrop-filter: blur(26px) saturate(160%);
+      -webkit-backdrop-filter: blur(26px) saturate(160%);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.70), var(--glass-edge-sheen);
       z-index: 40;
     }
 
@@ -200,7 +200,7 @@
     .divider {
       width: 1px;
       height: 16px;
-      background: var(--crystal-border);
+      background: var(--glass-border);
       margin: 0 0.15rem;
     }
 
@@ -213,13 +213,13 @@
       text-transform: uppercase;
       color: var(--text-muted);
       line-height: 1.65;
-      background: rgba(2, 2, 4, 0.96);
+      background: rgba(4, 7, 14, 0.60);
       padding: 0.75rem 1.15rem;
-      border: 1px solid var(--crystal-border);
+      border: 1px solid var(--glass-border);
       border-radius: 0px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95), var(--crystal-edge-sheen);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), var(--glass-edge-sheen);
       pointer-events: none;
     }
 
@@ -233,13 +233,13 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--text-muted);
-      background: rgba(2, 2, 4, 0.96);
+      background: rgba(4, 7, 14, 0.60);
       padding: 0.75rem 1.15rem;
-      border: 1px solid var(--crystal-border);
+      border: 1px solid var(--glass-border);
       border-radius: 0px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95), var(--crystal-edge-sheen);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), var(--glass-edge-sheen);
       pointer-events: none;
     }
 
@@ -271,9 +271,9 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       z-index: 100;
       display: none;
       align-items: center;
@@ -286,12 +286,14 @@
     }
 
     .modal-card {
-      background: rgba(3, 4, 6, 0.98);
-      border: 1px solid var(--crystal-border-sharp);
+      background: rgba(6, 10, 20, 0.76);
+      border: 1px solid var(--glass-border-sharp);
       border-radius: 0px;
       width: 100%;
       max-width: 740px;
-      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.98), var(--crystal-edge-sheen);
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.85), var(--glass-edge-sheen);
+      backdrop-filter: blur(32px) saturate(170%);
+      -webkit-backdrop-filter: blur(32px) saturate(170%);
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -480,8 +482,8 @@
     }
 
     .form-select, .form-textarea {
-      background: #000000;
-      border: 1px solid var(--crystal-border);
+      background: rgba(4, 7, 14, 0.70);
+      border: 1px solid var(--glass-border);
       border-radius: 0px;
       color: var(--text);
       font-size: 0.88rem;
@@ -489,7 +491,9 @@
       padding: 0.75rem 0.95rem;
       outline: none;
       width: 100%;
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
       transition: border-color 0.18s ease;
     }
 
@@ -523,14 +527,16 @@
     }
 
     .result-terminal {
-      background: #000000;
-      border: 1px solid var(--crystal-border);
+      background: rgba(4, 7, 14, 0.65);
+      border: 1px solid var(--glass-border);
       border-radius: 0px;
       padding: 1.25rem;
       display: flex;
       flex-direction: column;
       gap: 0.95rem;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
     .result-badge {
@@ -676,12 +682,12 @@
       top: 76px;
       right: 2rem;
       width: 340px;
-      background: rgba(2, 2, 4, 0.97);
-      border: 1px solid var(--crystal-border-sharp);
+      background: rgba(5, 9, 18, 0.70);
+      border: 1px solid var(--glass-border-sharp);
       border-radius: 0px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.98), var(--crystal-edge-sheen);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.75), var(--glass-edge-sheen);
+      backdrop-filter: blur(28px) saturate(160%);
+      -webkit-backdrop-filter: blur(28px) saturate(160%);
       z-index: 60;
       display: none;
       overflow: hidden;
@@ -692,15 +698,16 @@
       display: none;
       pointer-events: none;
       z-index: 55;
-      background: rgba(0, 0, 0, 0.96);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(4, 7, 14, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.30);
       padding: 0.35rem 0.8rem;
       border-radius: 0px;
       font-size: 0.78rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       backdrop-filter: blur(16px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.95);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), var(--glass-edge-sheen);
       white-space: nowrap;
       transform: translate(-50%, -135%);
       color: #ffffff;
@@ -811,7 +818,7 @@
       <div class="divider"></div>
       <div class="hud-target-nav" style="display: flex; align-items: center; gap: 4px;">
         <button class="filter-btn" onclick="cycleTarget(-1)" title="Previous Object" style="padding: 0.38rem 0.65rem; font-size: 0.76rem;">PREV</button>
-        <select id="hud-target-select" onchange="onTargetSelectChange(this.value)" style="background: #000000; border: 1px solid var(--crystal-border-sharp); color: #fff; font-size: 0.80rem; padding: 5px 8px; border-radius: 0px; outline: none; cursor: pointer; max-width: 195px;" title="Select object for presentation focus">
+        <select id="hud-target-select" onchange="onTargetSelectChange(this.value)" style="background: rgba(6, 10, 20, 0.70); border: 1px solid var(--glass-border-sharp); color: #fff; font-size: 0.80rem; padding: 5px 8px; border-radius: 0px; outline: none; cursor: pointer; max-width: 195px; backdrop-filter: blur(12px);" title="Select object for presentation focus">
           <option value="">SELECT TARGET TRACK</option>
         </select>
         <button class="filter-btn" onclick="cycleTarget(1)" title="Next Object" style="padding: 0.38rem 0.65rem; font-size: 0.76rem;">NEXT</button>
@@ -850,13 +857,13 @@
         <span id="insp-name">SELECTED TRACK</span>
         <button class="modal-close" style="width: 22px; height: 22px; font-size: 0.85rem;" onclick="closeInspector()">&times;</button>
       </div>
-      <div id="inspector-3d-box" style="position: relative; width: 100%; height: 165px; background: #000000; border-bottom: 1px solid var(--crystal-border); overflow: hidden;">
+      <div id="inspector-3d-box" style="position: relative; width: 100%; height: 165px; background: rgba(3, 5, 12, 0.45); border-bottom: 1px solid var(--glass-border); overflow: hidden;">
         <canvas id="inspector-canvas" style="width: 100%; height: 100%; display: block; cursor: grab;"></canvas>
         <div style="position: absolute; bottom: 8px; left: 10px; font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase;">
           <span id="insp-3d-label" style="color: var(--color-satellite);">3D SPACECRAFT MODEL</span>
         </div>
         <div style="position: absolute; bottom: 6px; right: 8px;">
-          <button id="btn-focus-object" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 0.70rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 0px; padding: 4px 8px; cursor: pointer;" onclick="focusCameraOnSelected()">TRACK IN 3D</button>
+          <button id="btn-focus-object" style="background: rgba(255,255,255,0.08); border: 1px solid var(--glass-border-sharp); color: #fff; font-size: 0.70rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 0px; padding: 4px 8px; cursor: pointer; backdrop-filter: blur(8px);" onclick="focusCameraOnSelected()">TRACK IN 3D</button>
         </div>
       </div>
       <div class="inspector-body">
@@ -1571,6 +1578,42 @@
       return new THREE.CanvasTexture(c);
     }
 
+    function createStarGlowTexture() {
+      const c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      const cx = c.getContext('2d');
+      cx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+      cx.lineWidth = 1.2;
+      cx.beginPath();
+      cx.moveTo(32, 2); cx.lineTo(32, 62);
+      cx.moveTo(2, 32); cx.lineTo(62, 32);
+      cx.stroke();
+      const grad = cx.createRadialGradient(32, 32, 0, 32, 32, 28);
+      grad.addColorStop(0, '#ffffff');
+      grad.addColorStop(0.20, 'rgba(255, 255, 255, 0.95)');
+      grad.addColorStop(0.50, 'rgba(215, 235, 255, 0.40)');
+      grad.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
+      cx.fillStyle = grad;
+      cx.beginPath();
+      cx.arc(32, 32, 28, 0, Math.PI * 2);
+      cx.fill();
+      return new THREE.CanvasTexture(c);
+    }
+
+    function createNebulaDustTexture() {
+      const c = document.createElement('canvas');
+      c.width = 128; c.height = 128;
+      const cx = c.getContext('2d');
+      const grad = cx.createRadialGradient(64, 64, 0, 64, 64, 64);
+      grad.addColorStop(0, 'rgba(255, 255, 255, 0.65)');
+      grad.addColorStop(0.35, 'rgba(180, 205, 255, 0.28)');
+      grad.addColorStop(0.70, 'rgba(120, 150, 220, 0.08)');
+      grad.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
+      cx.fillStyle = grad;
+      cx.fillRect(0, 0, 128, 128);
+      return new THREE.CanvasTexture(c);
+    }
+
     function createOrbitalGlowTexture(isDebris) {
       const c = document.createElement('canvas');
       c.width = 128; c.height = 128;
@@ -1641,28 +1684,92 @@
       controls.minDistance = 6720;
       controls.maxDistance = 110000;
 
-      // Space Background Stars (6,000 multi-colored celestial stars)
+      // 1. Deep Celestial Background Micro-Stars (10,000 multi-spectral stars)
       const starGeo = new THREE.BufferGeometry();
       const starPos = [];
       const starColors = [];
       const starPalette = [
-        new THREE.Color(0xffffff),
-        new THREE.Color(0x99ccff),
-        new THREE.Color(0xfff6eb),
-        new THREE.Color(0xffddaa),
-        new THREE.Color(0x77bbff)
+        new THREE.Color(0xffffff), // Class A White
+        new THREE.Color(0x9bb0ff), // Class O Blue
+        new THREE.Color(0xcad7ff), // Class B Blue-White
+        new THREE.Color(0xfff4e8), // Class F Cream
+        new THREE.Color(0xffdd99), // Class G Yellow (Solar)
+        new THREE.Color(0xffaa66)  // Class K Amber
       ];
-      for (let i = 0; i < 6000; i++) {
+      for (let i = 0; i < 10000; i++) {
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos(Math.random() * 2 - 1);
-        const r = 160000 + (Math.random() - 0.5) * 30000;
+        const r = 210000 + (Math.random() - 0.5) * 40000;
         starPos.push(r * Math.sin(phi) * Math.cos(theta), r * Math.sin(phi) * Math.sin(theta), r * Math.cos(phi));
         const c = starPalette[Math.floor(Math.random() * starPalette.length)];
-        starColors.push(c.r, c.g, c.b);
+        const b = 0.4 + Math.random() * 0.6;
+        starColors.push(c.r * b, c.g * b, c.b * b);
       }
       starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starPos, 3));
       starGeo.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
-      scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({ size: 220, vertexColors: true, transparent: true, opacity: 0.95 })));
+      scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({ size: 110, vertexColors: true, transparent: true, opacity: 0.92 })));
+
+      // 2. Prominent Primary Navigational Stars (450 radiant beacon stars)
+      const brightStarGeo = new THREE.BufferGeometry();
+      const brightPos = [];
+      const brightColors = [];
+      for (let i = 0; i < 450; i++) {
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos(Math.random() * 2 - 1);
+        const r = 180000 + (Math.random() - 0.5) * 20000;
+        brightPos.push(r * Math.sin(phi) * Math.cos(theta), r * Math.sin(phi) * Math.sin(theta), r * Math.cos(phi));
+        const c = starPalette[Math.floor(Math.random() * starPalette.length)];
+        brightColors.push(c.r, c.g, c.b);
+      }
+      brightStarGeo.setAttribute('position', new THREE.Float32BufferAttribute(brightPos, 3));
+      brightStarGeo.setAttribute('color', new THREE.Float32BufferAttribute(brightColors, 3));
+      scene.add(new THREE.Points(brightStarGeo, new THREE.PointsMaterial({
+        size: 320,
+        map: createStarGlowTexture(),
+        vertexColors: true,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      })));
+
+      // 3. Photorealistic Milky Way Galactic Dust Plane (3,600 luminous dust particles)
+      const mwGeo = new THREE.BufferGeometry();
+      const mwPos = [];
+      const mwColors = [];
+      const mwTilt = 63 * Math.PI / 180; // Actual ~63° inclination of Milky Way plane
+      const cosMw = Math.cos(mwTilt), sinMw = Math.sin(mwTilt);
+      const mwPalette = [
+        new THREE.Color(0x3a4872), // Cosmic Blue Haze
+        new THREE.Color(0x4a3c5a), // Lavender Nebula
+        new THREE.Color(0x5a483a), // Interstellar Warm Dust
+        new THREE.Color(0x283850)  // Deep Indigo Cluster
+      ];
+      for (let i = 0; i < 3600; i++) {
+        const u = Math.random() * Math.PI * 2;
+        const v = (Math.random() - 0.5) * 0.38;
+        const r = 215000 + (Math.random() - 0.5) * 30000;
+        const gx = r * Math.cos(u) * Math.cos(v);
+        const gy = r * Math.sin(v);
+        const gz = r * Math.sin(u) * Math.cos(v);
+        const x = gx;
+        const y = gy * cosMw - gz * sinMw;
+        const z = gy * sinMw + gz * cosMw;
+        mwPos.push(x, y, z);
+        const c = mwPalette[Math.floor(Math.random() * mwPalette.length)];
+        const b = 0.35 + Math.random() * 0.45;
+        mwColors.push(c.r * b, c.g * b, c.b * b);
+      }
+      mwGeo.setAttribute('position', new THREE.Float32BufferAttribute(mwPos, 3));
+      mwGeo.setAttribute('color', new THREE.Float32BufferAttribute(mwColors, 3));
+      scene.add(new THREE.Points(mwGeo, new THREE.PointsMaterial({
+        size: 18000,
+        map: createNebulaDustTexture(),
+        vertexColors: true,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        opacity: 0.26
+      })));
 
       // Directional Sunlight & Sun Mesh with Radiant Solar Flare Corona
       const sunInit = getLiveSunPosition(new Date());
@@ -1796,19 +1903,31 @@
           // Day diffuse
           vec3 diffuseDay = dayColor.rgb * (max(sunDot, 0.0) * 0.92 + 0.08) + specularGlint;
 
-          // Night city lights (glowing exclusively on the dark side of Earth, golden amber)
-          vec3 diffuseNight = nightColor.rgb * 3.0 * (1.0 - dayFactor);
+          // Authentic nocturnal city radiance: warm sodium vapor & LED incandescent cluster glow
+          vec3 cityBase = nightColor.rgb;
+          vec3 cityWarmth = mix(vec3(1.0, 0.74, 0.38), vec3(1.0, 0.96, 0.88), clamp(cityBase.r * 1.5, 0.0, 1.0));
+          vec3 nightLights = cityBase * cityWarmth * 3.6;
+
+          // Subtle night-side landmass presence (ambient starlight & airglow reflection on continents)
+          // Oceans remain true velvet black, while continents show a faint realistic silhouette
+          vec3 landSilhouette = dayColor.rgb * 0.016 * (1.0 - specColor.r);
+          vec3 diffuseNight = (nightLights + landSilhouette) * (1.0 - dayFactor);
 
           vec3 finalColor = mix(diffuseNight, diffuseDay, dayFactor);
 
-          // Sunset / Twilight amber rim along the physical terminator
-          float terminatorGlow = (1.0 - abs(sunDot * 6.0)) * max(1.0 - abs(sunDot * 6.0), 0.0);
-          finalColor += vec3(0.92, 0.38, 0.10) * terminatorGlow * 0.40;
+          // Physical Rayleigh twilight scattering along the terminator boundary
+          float twilight = smoothstep(-0.06, 0.01, sunDot) * smoothstep(0.08, -0.01, sunDot);
+          vec3 twilightGlow = vec3(1.0, 0.36, 0.08) * twilight * 0.65;
+          finalColor += twilightGlow;
 
           // Atmospheric Rayleigh blue limb scattering (strictly gated to daylit side - no night blue glow)
           float rim = 1.0 - max(dot(viewDir, normal), 0.0);
           float dayScatter = smoothstep(-0.02, 0.12, sunDot);
           finalColor += vec3(0.08, 0.48, 0.98) * pow(rim, 3.8) * dayScatter * 0.85;
+
+          // Delicate nocturnal limb airglow (faint green-cyan chemiluminescent horizon seen from orbit)
+          float nightAirglow = pow(rim, 5.0) * (1.0 - dayFactor) * 0.22;
+          finalColor += vec3(0.03, 0.16, 0.20) * nightAirglow;
 
           gl_FragColor = vec4(finalColor, 1.0);
         }
@@ -1851,8 +1970,16 @@
           vec3 lightDir = normalize(sunDirection);
           float intensity = pow(0.72 - dot(normal, viewDir), 2.2);
           float sunScatter = smoothstep(-0.04, 0.18, dot(normal, lightDir));
-          vec3 glowColor = mix(vec3(0.08, 0.42, 0.95), vec3(0.0, 0.85, 1.0), intensity);
-          gl_FragColor = vec4(glowColor, intensity * sunScatter * 0.95);
+          vec3 dayGlowColor = mix(vec3(0.08, 0.42, 0.95), vec3(0.0, 0.85, 1.0), intensity);
+
+          // Day blue Rayleigh scattering
+          vec3 dayAtmosphere = dayGlowColor * intensity * sunScatter * 0.95;
+
+          // Subtle nocturnal airglow corona on the dark limb
+          float nightLimb = pow(0.72 - dot(normal, viewDir), 3.5);
+          vec3 nightAtmosphere = vec3(0.02, 0.14, 0.22) * nightLimb * (1.0 - sunScatter) * 0.15;
+
+          gl_FragColor = vec4(dayAtmosphere + nightAtmosphere, max(intensity * sunScatter * 0.95, nightLimb * (1.0 - sunScatter) * 0.15));
         }
       `;
       atmosMesh = new THREE.Mesh(
@@ -2063,16 +2190,16 @@
     function buildTargetingReticle() {
       targetMarkerGroup.clear();
 
-      const ringGeo = new THREE.RingGeometry(240, 275, 32);
+      const ringGeo = new THREE.RingGeometry(380, 430, 32);
       const ringMat = new THREE.MeshBasicMaterial({ color: 0x00e5ff, side: THREE.DoubleSide, transparent: true, opacity: 0.85 });
       targetMarkerGroup.add(new THREE.Mesh(ringGeo, ringMat));
 
       const bracketMat = new THREE.LineBasicMaterial({ color: 0x00e5ff });
       const bracketPts = [
-        new THREE.Vector3(-360, 0, 0), new THREE.Vector3(-180, 0, 0),
-        new THREE.Vector3(180, 0, 0), new THREE.Vector3(360, 0, 0),
-        new THREE.Vector3(0, -360, 0), new THREE.Vector3(0, -180, 0),
-        new THREE.Vector3(0, 180, 0), new THREE.Vector3(0, 360, 0)
+        new THREE.Vector3(-550, 0, 0), new THREE.Vector3(-280, 0, 0),
+        new THREE.Vector3(280, 0, 0), new THREE.Vector3(550, 0, 0),
+        new THREE.Vector3(0, -550, 0), new THREE.Vector3(0, -280, 0),
+        new THREE.Vector3(0, 280, 0), new THREE.Vector3(0, 550, 0)
       ];
       targetMarkerGroup.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(bracketPts), bracketMat));
       targetMarkerGroup.visible = false;
@@ -2267,21 +2394,21 @@
 
       let model;
       if (obj.isDebris) {
-        model = createDebrisModel(185, obj.id);
+        model = createDebrisModel(240, obj.id);
       } else {
-        model = createSatelliteModel(170);
+        model = createSatelliteModel(220);
       }
       model.position.set(0, 0, 0);
       focused3DObjectGroup.add(model);
 
       // Dedicated orbital key and fill lights for the focused 3D model
       // Guarantees rich specular gleam and clear visibility at any orbital position
-      const keyLight = new THREE.PointLight(0xffffff, 2.5, 4500);
-      keyLight.position.set(500, 600, 800);
+      const keyLight = new THREE.PointLight(0xffffff, 2.8, 9500);
+      keyLight.position.set(1200, 1500, 1800);
       focused3DObjectGroup.add(keyLight);
 
-      const earthGlint = new THREE.PointLight(0x7ec8e3, 1.2, 4500);
-      earthGlint.position.set(-600, -300, -400);
+      const earthGlint = new THREE.PointLight(0x7ec8e3, 1.4, 9500);
+      earthGlint.position.set(-1200, -600, -800);
       focused3DObjectGroup.add(earthGlint);
 
       focused3DObjectGroup.visible = true;
@@ -2294,11 +2421,12 @@
       const localPos = selectedObjectData.position;
       const worldPos = localPos.clone().applyMatrix4(orbitalSystemGroup.matrixWorld);
 
-      // Standoff offset vector ~1,500 km radially outward + elevation angle
+      // Wide cinematic orbital surveillance standoff (~4,600 km)
+      // Captures the spacecraft, its orbital trajectory arc, and the majestic curved Earth beneath
       const radialDir = worldPos.clone().normalize();
-      const desiredOffset = radialDir.clone().multiplyScalar(1500).add(new THREE.Vector3(250, 250, 250));
+      const desiredOffset = radialDir.clone().multiplyScalar(4600).add(new THREE.Vector3(900, 1300, 900));
 
-      tweenCameraToRideAlong(desiredOffset, 1100);
+      tweenCameraToRideAlong(desiredOffset, 1200);
     }
 
     function tweenCameraToRideAlong(desiredOffset, duration = 1100) {

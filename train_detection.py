@@ -10,7 +10,6 @@ from imblearn.over_sampling import SMOTE
 
 EARTH_RADIUS = 6371.0
 MU = 398600.4418
-
 NEGATIVE_LABEL_FILES = ['active-sate.txt']
 POSITIVE_LABEL_FILES = [
     'cosmos-1408-debris.txt',
@@ -19,28 +18,22 @@ POSITIVE_LABEL_FILES = [
     'iridium-33-debris.txt'
 ]
 TEST_FILES = ['iridium-33-debris.txt']
-
 def parse_tle_file(tle_file_path, label, data_dir='data'):
     data = []
     labels = []
     fp = os.path.join(data_dir, tle_file_path)
-
     if not os.path.exists(fp):
         raise FileNotFoundError(f"File not found: {fp}")
-
     with open(fp, 'r', encoding='utf-8', errors='ignore') as file:
         lines = file.readlines()
-
     now = datetime.now(timezone.utc)
     jd, fr = jday(now.year, now.month, now.day, now.hour, now.minute, now.second)
 
     for i in range(0, len(lines), 3):
         if i + 2 >= len(lines):
             break
-
         line1 = lines[i + 1].strip()
         line2 = lines[i + 2].strip()
-
         try:
             satellite = Satrec.twoline2rv(line1, line2)
             eccentricity = satellite.ecco
@@ -49,8 +42,8 @@ def parse_tle_file(tle_file_path, label, data_dir='data'):
             arg_perigee = satellite.argpo
             mean_anomaly = satellite.mo
             mean_motion = satellite.no_kozai
-
             denom = 1.0 - satellite.ecco
+            
             if abs(denom) < 1e-6:
                 denom = 1e-6
             semi_major_axis = 6378.1 / denom
@@ -58,13 +51,11 @@ def parse_tle_file(tle_file_path, label, data_dir='data'):
             perigee = semi_major_axis * (1.0 - eccentricity)
             apogee = semi_major_axis * (1.0 + eccentricity)
             orbital_period = 86400.0 / mean_motion if mean_motion > 0 else 0.0
-
             e, r, v = satellite.sgp4(jd, fr)
 
             if e != 0 or np.isnan(r).any() or np.isnan(v).any():
                 r = (0.0, 0.0, 0.0) if np.isnan(r).any() else r
                 v = (0.0, 0.0, 0.0) if np.isnan(v).any() else v
-
             distance_from_center = np.sqrt(r[0]**2 + r[1]**2 + r[2]**2)
             velocity_magnitude = np.sqrt(v[0]**2 + v[1]**2 + v[2]**2)
 
@@ -72,7 +63,6 @@ def parse_tle_file(tle_file_path, label, data_dir='data'):
                 specific_orbital_energy = (velocity_magnitude**2) / 2.0 - (MU / distance_from_center)
             else:
                 specific_orbital_energy = 0.0
-
             data.append({
                 'eccentricity': eccentricity,
                 'inclination': inclination,

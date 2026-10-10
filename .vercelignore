@@ -1,0 +1,10 @@
+.venv
+__pycache__
+*.pyc
+data/
+tle_data/
+*.ipynb
+*.py
+*.txt
+.idea
+.DS_Store

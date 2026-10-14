@@ -74,7 +74,3 @@ The data for this project is derived from **CelesTrak** and other open sources:
   - Accuracy: 0.8420
   - Precision (Class 1 - Debris): 82.3%
   - Recall (Class 1 - Debris): 85.1%
-
-```bash
-.\.venv\Scripts\python.exe hourly_download.py
-```

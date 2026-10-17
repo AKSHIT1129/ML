@@ -28,23 +28,17 @@
 
 			this.minZoom = 0;
 			this.maxZoom = Infinity; // How far you can orbit vertically, upper and lower limits.
-			// Range is 0 to Math.PI radians.
-
+			
 			this.minPolarAngle = 0; // radians
 
 			this.maxPolarAngle = Math.PI; // radians
-			// How far you can orbit horizontally, upper and lower limits.
-			// If set, the interval [ min, max ] must be a sub-interval of [ - 2 PI, 2 PI ], with ( max - min < 2 PI )
 
 			this.minAzimuthAngle = - Infinity; // radians
 
 			this.maxAzimuthAngle = Infinity; // radians
-			// Set to true to enable damping (inertia)
-			// If damping is enabled, you must call controls.update() in your animation loop
 
 			this.enableDamping = false;
 			this.dampingFactor = 0.05; // This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
-			// Set to false to disable zooming
 
 			this.enableZoom = true;
 			this.zoomSpeed = 1.0; // Set to false to disable rotating
@@ -57,12 +51,9 @@
 			this.screenSpacePanning = true; // if false, pan orthogonal to world-space direction camera.up
 
 			this.keyPanSpeed = 7.0; // pixels moved per arrow key push
-			// Set to true to automatically rotate around the target
-			// If auto-rotate is enabled, you must call controls.update() in your animation loop
 
 			this.autoRotate = false;
 			this.autoRotateSpeed = 2.0; // 30 seconds per orbit when fps is 60
-			// The four arrow keys
 
 			this.keys = {
 				LEFT: 'ArrowLeft',
@@ -224,8 +215,6 @@
 					}
 
 					scale = 1; // update condition is:
-					// min(camera displacement, camera rotation in radians)^2 > EPS
-					// using small-angle approximation cos(x/2) = 1 - x^2 / 8
 
 					if ( zoomChanged || lastPosition.distanceToSquared( scope.object.position ) > EPS || 8 * ( 1 - lastQuaternion.dot( scope.object.quaternion ) ) > EPS ) {
 
